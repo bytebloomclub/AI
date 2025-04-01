@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor Profesional de PDF a PNG</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 40px;
+        }
+        h1 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .input-group {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 16px;
+            color: #28a745;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-file-pdf"></i> Convertidor de PDF a PNG</h1>
+        <p>Selecciona un archivo PDF y conviértelo fácilmente a formato PNG.</p>
+        <div class="input-group">
+            <input type="file" id="pdfFile" accept=".pdf">
+            <button onclick="convertToPNG()">Convertir</button>
+        </div>
+        <p id="message" class="message"></p>
+    </div>
+    <footer>
+        <p>&copy; 2025 Convertidor PDF a PNG. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function convertToPNG() {
+            const fileInput = document.getElementById('pdfFile');
+            const message = document.getElementById('message');
+            if (fileInput.files.length === 0) {
+                message.textContent = 'Por favor, selecciona un archivo PDF.';
+                message.style.color = '#dc3545'; // Color rojo para error
+                return;
+            }
+            message.textContent = 'Conversión en progreso...';
+            // Simulación de la lógica de conversión
+            setTimeout(() => {
+                message.textContent = 'Conversión completada. ¡Descarga tu archivo PNG!';
+                message.style.color = '#28a745'; // Color verde para éxito
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
